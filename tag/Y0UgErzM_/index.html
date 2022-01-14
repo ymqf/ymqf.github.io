@@ -1,123 +1,347 @@
-<html>
-  <head>
+<html lang='zh-CN'>
+
+<head>
   <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Gridea | Gridea</title>
-<link rel="shortcut icon" href="https://ymqf.github.io/favicon.ico?v=1632143623118">
+<meta name="viewport"
+  content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+<title>
+  Gridea | 倚梦清风
+</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wskkku/wskkku.github.io@main/css/normalize0.0.0.1.css">
+<script src="https://cdn.jsdelivr.net/gh/wskkku/wskkku.github.io@main/js/jQuery.Rokss.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+
+<link rel="shortcut icon" href="https://ymqf.github.io/favicon.ico?v=1642151222166">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://ymqf.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="Gridea | Gridea - Atom Feed" href="https://ymqf.github.io/atom.xml">
+
+<link rel="alternate" type="application/atom+xml" title="Gridea | 倚梦清风 - Atom Feed"
+  href="https://ymqf.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.7.2/build/styles/atelier_plateau_light.min.css"
+  id="hightLightCode" rel="stylesheet" type="text/css" />
 
 
+<script>
+  var setStyle = function (cssArr) {
+    var i = 0, len = cssArr.length;
+    for (i; i < len; i++) {
+      document.write('<link href="' + cssArr[i] + '" type="text/css" rel=stylesheet>');
+    }
+  };
 
-  <meta name="description" content="温故而知新" />
-  </head>
-  <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://ymqf.github.io">
-  <img class="avatar" src="https://ymqf.github.io/images/avatar.png?v=1632143623118" alt="">
-  </a>
-  <h1 class="site-title">
-    Gridea
-  </h1>
-  <p class="site-description">
-    温故而知新
-  </p>
-  <div class="menu-container">
+  if ($.cookie('theme') === 'dark') {
+    $('html').attr('theme', 'dark');
+    $('#hightLightCode').attr('href', '//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.7.2/build/styles/atelier_plateau_dark.min.css')
+  } else {
+    $('#hightLightCode').attr('href', '//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.7.2/build/styles/atelier_plateau_light.min.css')
+  }
+
+</script>
+
+
     
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  </div>
+        
+    <meta name="description" content="来自倚梦清风blog  洞天察地,万物之理。" />
+</head>
+
+<body>
+
+  <div class="nav-placeholder">
+    <nav class="navbar navbar-expand-lg light-theme">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://ymqf.github.io/favicon.ico?v=1642151222166" width="30" height="30" alt="">
+            </a>
+            <a class="navbar-brand" href="#">
+                倚梦清风
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list navbar-toggler-icon"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+
+                    
+                        
+                                <li class="nav-item">
+                                    <a href="/" class="nav-link">
+                                        首页
+                                    </a>
+                                </li>
+                                
+                                    
+                        
+                                <li class="nav-item">
+                                    <a href="/archives" class="nav-link">
+                                        归档
+                                    </a>
+                                </li>
+                                
+                                    
+                        
+                                <li class="nav-item">
+                                    <a href="/tags" class="nav-link">
+                                        标签
+                                    </a>
+                                </li>
+                                
+                                    
+                        
+                                <li class="nav-item">
+                                    <a href="/post/about" class="nav-link">
+                                        关于
+                                    </a>
+                                </li>
+                                
+                                    
+                </ul>
+
+                <form class="form-inline my-2 my-lg-0" id="gridea-search-form"
+                    action="https://ymqf.github.io/search/">
+                    <input class="search-input mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q"
+                        autocomplete="off" />
+                    <button class="btn-search my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
+                </form>
+
+                <div class="theme-change">
+                    <ul>
+                        <i class="bi bi-sun-fill light-theme"></i>
+                        <i class="bi bi-moon-fill dark-theme"></i>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
 </div>
 
-        <div class="current-tag-container">
-            <h2 class="title">
-                标签：# Gridea
-            </h2> 
-        </div>
-        <div class="post-container">
+
+    <script>
+        var nowTime = new Date()
+        var hour = nowTime.getHours()
+        if (hour >= 19 || hour <= 5 && $.cookie('theme') == undefined) {
+            $.cookie('theme', 'dark', { path: '/' })
+            $('html').attr('theme', 'dark');
+        }
+    </script>
+    
+
+        <script>
+            var themeFlag = 0
+            if ($.cookie('theme') === 'dark') {
+                $('.theme-change').find('ul').css({
+                    'transform': 'translateX(-55px)',
+                    'transition': 'none'
+                })
+                themeFlag = 1
+            }
+
+            $('.theme-change').click(function () {
+                $(this).find('ul').css('transition', '.3s')
+                if (themeFlag == 0) {
+                    $(this).find('ul').css('transform', 'translateX(-55px)');
+                    themeFlag = 1
+                    $.removeCookie('theme', { path: '/' })
+                    $.cookie('theme', 'dark', { path: '/' })
+                    $('html').attr('theme', 'dark');
+                } else {
+                    $(this).find('ul').css('transform', 'translateX(0px)');
+                    themeFlag = 0
+                    $.removeCookie('theme', { path: '/' })
+                    $.cookie('theme', 'light', { path: '/' })
+                    $('html').attr('theme', 'light');
+                }
+            });
+
+            window.addEventListener('scroll', function () {
+                if (this.pageYOffset >= 300) {
+                    $('.navbar').addClass('fixed-top').css({
+                        'background': 'var(--box-bg-color)',
+                        'border-bottom': '2px solid var(--main-color)',
+                    })
+
+                    $('.search-input').css('backgroundColor', 'var(--page-bg-color)')
+                    $('.btn-search').css('backgroundColor', 'var(--page-bg-color)')
+                } else {
+                    $('.navbar').removeClass('fixed-top').css({
+                        'background': 'none',
+                        'border-bottom': 'none',
+                    })
+
+                    $('.search-input').css('backgroundColor', 'var(--box-bg-color)')
+                    $('.btn-search').css('backgroundColor', 'var(--box-bg-color)')
+                }
+            })
+
+            $('.navbar-toggler').click(function () {
+                if (window.pageYOffset < 300) {
+                    if ($(this).attr('aria-expanded') == "false") {
+                        $('.navbar').css({
+                            'background': 'var(--box-bg-color)',
+                            'border-bottom': '2px solid var(--main-color)',
+                        })
+
+                        $('.search-input').css('backgroundColor', 'var(--page-bg-color)')
+                        $('.btn-search').css('backgroundColor', 'var(--page-bg-color)')
+                    } else {
+                        $('.navbar').css({
+                            'background': 'none',
+                            'border-bottom': 'none',
+                        })
+
+                        $('.search-input').css('backgroundColor', 'var(--box-bg-color)')
+                        $('.btn-search').css('backgroundColor', 'var(--box-bg-color)')
+                    }
+                }
+            });
+            console.log($.cookie('theme'));
+        </script>
+
+    <div class="jumbotron">
+
   
-    <article class="post">
-      <a href="https://ymqf.github.io/post/hello-gridea/">
-        <h2 class="post-title">Hello Gridea</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2018-12-12
-        </span>
-        <span>
-          2 min read
-        </span>
-        
-          <a href="https://ymqf.github.io/tag/Y0UgErzM_/" class="post-tag">
-            # Gridea
-          </a>
-        
+    <div class="background"
+      style="background: url('https://ymqf.github.io/media/images/custom-bannerBgImage.jpg') no-repeat; background-size: cover;">
+      <div class="mask"></div>
+    </div>
+    
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-1 d-none d-lg-block"></div>
+          <div class="col-lg-3 col-md-4 col-sm-4 d-none d-sm-block">
+            <div class="avatar"
+              style="background: url('https://ymqf.github.io/images/avatar.png?v=1642151222166');background-size: cover;"
+              alt="">
+              <div class="mask-dark"></div>
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-8">
+            <h1 class="display-4 title">
+              倚梦清风
+            </h1>
+            <p class="lead context">
+              来自倚梦清风blog  洞天察地,万物之理。
+            </p>
+            
+              <a class="btn btn-primary btn-lg" href="https://ymqf.github.io/post/about/" r='btn-hover' role="button"
+                id="about-me">关于我</a>
+              
+          </div>
+        </div>
       </div>
-      
-        <a href="https://ymqf.github.io/post/hello-gridea/" class="post-feature-image" style="background-image: url('https://ymqf.github.io/post-images/hello-gridea.png')">
-        </a>
-      
-      <div class="post-abstract">
-        <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+</div>
+      <div class="main">
+        <div class="main-content">
+          <div class="current-tag-container">
+            <h2 class="title">
+              # Gridea
+            </h2>
+          </div>
+          <div class="container">
+  <div class="card-columns">
+    
+      <a href="https://ymqf.github.io/post/hello-gridea/">
+        <div class="card" style="background-color: var(--box-bg-color);">
+          
+              
+                <div class="clearfix" style="position: relative;">
+                  <img src="https://ymqf.github.io/post-images/hello-gridea.png" class="card-img-top" alt="...">
+                  <div class="mask-dark"></div>
+                </div>
+                
+                  
+                    <div class="card-body clearfix role">
+                      
+                            <h5 class="card-title title">
+                              Hello Gridea
+                            </h5>
+                            <div class="card-text context">
+                              <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
 ✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
 
-      </div>
-    </article>
-  
-</div>
+                            </div>
+                            <p class="card-text flexss">
+                              <small class="text-muted">
+                                
+                                  
+                                    
 
-        <div class="pagination-container">
-  
-  
+                                        
+
+                                          
+                                            <a href="https://ymqf.github.io/tag/Y0UgErzM_/" class="card-tag">
+                                              Gridea
+                                            </a>
+                                            
+
+                                              <span class="date">
+                                                2018-12-12
+                                              </span>
+                              </small>
+                            </p>
+                        </div>
+                    </div>
+      </a>
+      
+  </div>
+</div>
+        </div>
+      </div>
+      <div class="container">
+  <div class="pagination-container">
+    
+        
+  </div>
 </div>
 
         <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-  <a class="rss" href="https://ymqf.github.io/atom.xml" target="_blank">
-    <i class="ri-rss-line"></i> RSS
-  </a>
-</div>
-
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="detial">
+          Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="about-me">
+          <div class="avator"
+            style="background: url('https://ymqf.github.io/images/avatar.png?v=1642151222166');background-size: cover;">
+            <div class="mask-dark"></div>
+          </div>
+          <div class="social-link">
+            
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+          </div>
+        </div>
       </div>
     </div>
-  </body>
+  </div>
+</div>
+
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
 </html>
